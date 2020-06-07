@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Hemipteropsy</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <form id="bedbugs" oninput="calc()">
+        <section>
+            <h2>Aggravating factors</h2>
+
+            <fieldset>
+                <legend>Scope</legend>
+                <label>
+                    <input type="radio" name="bug_scope" value="10">
+                    Whole application
+                </label>
+                <label>
+                    <input type="radio" name="bug_scope" value="7">
+                    Several workflows, large part of application
+                </label>
+                <label>
+                    <input type="radio" name="bug_scope" value="4">
+                    Single workflow
+                </label>
+                <label>
+                    <input type="radio" name="bug_scope" value="2">
+                    Single or small number of controls
+                </label>
+                <label>
+                    <input type="radio" name="bug_scope" value="1" checked>
+                    A message or label
+                </label>
+                <label>
+                    <input type="radio" name="bug_scope" value="0.7">
+                    A styling or layout element, like a border
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Severity</legend>
+                <label>
+                    <input type="radio" name="bug_severity" value="10">
+                    Damage or corruption of existing data
+                </label>
+                <label>
+                    <input type="radio" name="bug_severity" value="7">
+                    It does the wrong thing
+                </label>
+                <label>
+                    <input type="radio" name="bug_severity" value="5">
+                    It doesn't work at all
+                </label>
+                <label>
+                    <input type="radio" name="bug_severity" value="2">
+                    It is displayed wrong, confusing, misleading etc.
+                </label>
+                <label>
+                    <input type="radio" name="bug_severity" value="1" checked>
+                    Cosmetic
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Urgency</legend>
+                <label>
+                    <input type="radio" name="bug_urgency" value="10">
+                    Has PRI 1 support case
+                </label>
+                <label>
+                    <input type="radio" name="bug_urgency" value="5">
+                    Regression in upcoming release
+                </label>
+                <label>
+                    <input type="radio" name="bug_urgency" value="4">
+                    Has PRI 2 or lower support case
+                </label>
+                <label>
+                    <input type="radio" name="bug_urgency" value="3">
+                    Affects new feature in upcoming release
+                </label>
+                <label>
+                    <input type="radio" name="bug_urgency" value="2">
+                    Affects released version
+                </label>
+                <label>
+                    <input type="radio" name="bug_urgency" value="1" checked>
+                    Affects a branch
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Spread</legend>
+                <label>
+                    <input type="radio" name="bug_spread" value="10">
+                    All users
+                </label>
+                <label>
+                    <input type="radio" name="bug_spread" value="3">
+                    A group of users (same department)
+                </label>
+                <label>
+                    <input type="radio" name="bug_spread" value="2">
+                    A type of users (only non-admins)
+                </label>
+                <label>
+                    <input type="radio" name="bug_spread" value="1" checked>
+                    A single user
+                </label>
+            </fieldset>
+        </section>
+
+        <section>
+            <h2>Mitigating factors</h2>
+
+            <fieldset>
+                <legend>Probability</legend>
+                <p>If you try to do this or use this, how likely are you to trigger the issue?</p>
+                <label>
+                    <input type="radio" name="bug_probability" value="1" checked>
+                    Every time
+                </label>
+                <label>
+                    <input type="radio" name="bug_probability" value="0.9">
+                    Most of the time
+                </label>
+                <label>
+                    <input type="radio" name="bug_probability" value="0.7">
+                    Usually
+                </label>
+                <label>
+                    <input type="radio" name="bug_probability" value="0.5">
+                    Sometimes
+                </label>
+                <label>
+                    <input type="radio" name="bug_probability" value="0.25">
+                    Not very often
+                </label>
+                <label>
+                    <input type="radio" name="bug_probability" value="0.1">
+                    Rarely
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Precoditions</legend>
+                <label>
+                    <input type="radio" name="bug_precondition" value="1" checked>
+                    None
+                </label>
+                <label>
+                    <input type="radio" name="bug_precondition" value="0.9">
+                    It needs to be configured a certain way
+                </label>
+                <label>
+                    <input type="radio" name="bug_precondition" value="0.5">
+                    It needs to be configured in an unsupported or incorrect way
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Workaround</legend>
+                <label>
+                    <input type="radio" name="bug_workaround" value="1" checked>
+                    None
+                </label>
+                <label>
+                    <input type="radio" name="bug_workaround" value="0.9">
+                    Reload the page
+                </label>
+                <label>
+                    <input type="radio" name="bug_workaround" value="0.8">
+                    Try again a few more times
+                </label>
+                <label>
+                    <input type="radio" name="bug_workaround" value="0.8">
+                    [Re]Configure manually
+                </label>
+                <label>
+                    <input type="radio" name="bug_workaround" value="0.8">
+                    Try again a few more times
+                </label>
+            </fieldset>
+        </section>
+
+        <section>
+            <h2>Effort estimation</h2>
+            <p>Just pick the unit of time you would use to count how much time you estimate. Think you can do it in 3 hours? Pick "hours".</p>
+
+            <fieldset>
+                <legend>Dev</legend>
+                <label>
+                    <input type="radio" name="effort_dev" value="years">
+                    Years
+                </label>
+                <label>
+                    <input type="radio" name="effort_dev" value="quarters">
+                    Quarters
+                </label>
+                <label>
+                    <input type="radio" name="effort_dev" value="months">
+                    Months
+                </label>
+                <label>
+                    <input type="radio" name="effort_dev" value="weeks">
+                    Weeks
+                </label>
+                <label>
+                    <input type="radio" name="effort_dev" value="days" checked>
+                    Days
+                </label>
+                <label>
+                    <input type="radio" name="effort_dev" value="hours">
+                    Hours
+                </label>
+                <label>
+                    <input type="radio" name="effort_dev" value="minutes">
+                    Minutes
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Test</legend>
+                <label>
+                    <input type="radio" name="effort_test" value="years">
+                    Years
+                </label>
+                <label>
+                    <input type="radio" name="effort_test" value="quarters">
+                    Quarters
+                </label>
+                <label>
+                    <input type="radio" name="effort_test" value="months">
+                    Months
+                </label>
+                <label>
+                    <input type="radio" name="effort_test" value="weeks">
+                    Weeks
+                </label>
+                <label>
+                    <input type="radio" name="effort_test" value="days" checked>
+                    Days
+                </label>
+                <label>
+                    <input type="radio" name="effort_test" value="hours">
+                    Hours
+                </label>
+                <label>
+                    <input type="radio" name="effort_test" value="minutes">
+                    Minutes
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Doc</legend>
+                <label>
+                    <input type="radio" name="effort_doc" value="years">
+                    Years
+                </label>
+                <label>
+                    <input type="radio" name="effort_doc" value="quarters">
+                    Quarters
+                </label>
+                <label>
+                    <input type="radio" name="effort_doc" value="months">
+                    Months
+                </label>
+                <label>
+                    <input type="radio" name="effort_doc" value="weeks">
+                    Weeks
+                </label>
+                <label>
+                    <input type="radio" name="effort_doc" value="days" checked>
+                    Days
+                </label>
+                <label>
+                    <input type="radio" name="effort_doc" value="hours">
+                    Hours
+                </label>
+                <label>
+                    <input type="radio" name="effort_doc" value="minutes">
+                    Minutes
+                </label>
+            </fieldset>
+        </section>
+
+        <h1>
+            <label for="score">Final score:</label>
+            <output id="score" name="score" form="bedbugs">1.00</output>
+            <input type="reset" class="btn">
+        </h1>
+    </form>
+    <footer>Made by <a href="mailto:mhh@vizrt.com">Mikal H Henriksen</a></footer>
+</body>
+
+</html>

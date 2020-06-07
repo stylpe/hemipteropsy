@@ -1,0 +1,61 @@
+form
+{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+form > section
+{
+    border: 2px solid black;
+    border-radius: 2em;
+    margin: 1em;
+    padding: 1em;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+}
+
+section > h2 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+section > p {
+    flex-basis: 100%;
+}
+
+fieldset
+{
+    width: 10em;
+    padding: 0 1em 1em;
+    flex: auto;
+    flex-basis: initial;
+    border-radius: 1em;
+}
+
+label
+{
+    display: block;
+}
+
+h1
+{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+output
+{
+    font-size: 3em;
+}
+
+input[type="reset"]
+{
+    margin-left: auto
+}
+
+footer
+{
+    margin: 1em;
+}
