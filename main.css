@@ -32,6 +32,9 @@ fieldset
     flex: auto;
     flex-basis: initial;
     border-radius: 1em;
+
+    /* Make absolute positioning of <i> work */
+    position: relative;
 }
 
 label
@@ -43,6 +46,71 @@ h1
 {
     flex-basis: 100%;
     text-align: center;
+}
+
+i
+{
+    /* Reset native style of <i> */
+    font-style: normal;
+
+    /* Styling */
+    border-radius: 0.5em;
+    background-color: royalblue;
+    color: white;
+
+    /* Sit in the top right corner */
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5em;
+    margin-top: 1em;
+
+    /* Initially tiny */
+    width: 1em;
+    max-height: 1em;
+    overflow: hidden;
+
+    /* Transitions
+    Animate height by itself, since doing both will
+    reflow text and cause height to instantly max
+    */
+    /* transition:
+        width 0.2s 0.2s,
+        max-height 0.2s,
+        padding 0.2s 0.2s; */
+    transition-property: width, max-height, padding;
+    transition-duration: 0.2s;
+}
+i:hover
+{
+    width: 80%;
+    max-height: 100%;
+    padding: 1em;
+
+    /* Reverse transition delays */
+    /* transition:
+        width 0.2s,
+        max-height 0.2s 0.2s,
+        padding 0.2s; */
+}
+i::before
+{
+    content: "i";
+
+    width: 1em;
+    float: right;
+    margin-left: 0.4em;
+
+    font-family: monospace;
+    text-align: center;
+
+    transition-property: width, font-size;
+    transition-duration: 0.2s;
+}
+i:hover::before
+{
+    /* width: auto; */
+    font-size: 180%;
 }
 
 output
