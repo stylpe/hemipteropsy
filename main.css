@@ -11,14 +11,20 @@ form > section
     margin: 1em;
     padding: 1em;
 
+    position: relative;
     display: flex;
+    flex: auto;
     flex-flow: row wrap;
-    justify-content: stretch;
 }
 
 section > h2 {
-    flex-basis: 100%;
     text-align: center;
+    position: absolute;
+    top: -0.5em;
+    left: 2em;
+    padding: 0 1em;
+    margin: 0;
+    background: white;
 }
 
 section > p {
@@ -27,16 +33,16 @@ section > p {
 
 fieldset
 {
-    width: 10em;
     padding: 0 1em 1em;
     flex: auto;
-    flex-basis: initial;
     border-radius: 1em;
 }
 
-label
+fieldset > label
 {
     display: block;
+    max-width: 16em;
+    min-width: fit-content;
 }
 
 h1
@@ -48,6 +54,7 @@ h1
 output
 {
     font-size: 3em;
+    vertical-align: middle;
 }
 
 input[type="reset"]
